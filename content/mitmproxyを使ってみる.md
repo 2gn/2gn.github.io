@@ -1,3 +1,4 @@
+#programming #network 
 # mitmproxyのインストール (debian)
 
 ```
@@ -27,11 +28,11 @@ Port: 上で使ったポート番号
 
 # 結果
 
-![[Pasted image 20250215234600.png]]
+![[mitmproxy-packet-list.png]]
 
 こんな感じでパケットを見ることができる。
 パケットごとの情報も見ることができる。
 
-![[Pasted image 20250215234901.png]]
+![[mitmproxy-packet-info.png]]
 
 中身が色々見れて面白い。
