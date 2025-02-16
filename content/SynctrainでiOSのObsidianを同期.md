@@ -1,3 +1,5 @@
+#technology
+
 > [!info]
 > ### 結論
 > [Synctrain](https://forum.syncthing.net/t/beta-test-my-new-ios-app-for-syncthing/22457)という、iOSのSyncthingクライアントでObsidianのフォルダを同期することができた。
