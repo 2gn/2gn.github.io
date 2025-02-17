@@ -34,4 +34,4 @@ systemctl start syncthing@<ユーザー名>.service
 
 ---
 
-WebUIは[8384ポート](http://localhost;8384)で動いている。
+WebUIは[8384ポート](http://localhost:8384)で動いている。
