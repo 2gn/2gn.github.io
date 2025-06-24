@@ -1,4 +1,4 @@
-#technology
+#synctrain #obsidian #syncthing
 
 > [!info]
 > ### 結論

@@ -1,3 +1,5 @@
+#syncthing #synctrain #systemd
+
 公式のドキュメントだと最初っからフレーバーをインストールさせられるので分りづらかった。
 
 > [!note]

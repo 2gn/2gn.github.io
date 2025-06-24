@@ -1,4 +1,4 @@
-#technology #network 
+#dns #nextdns 
 
 極力手順を省きます
 
