@@ -53,7 +53,24 @@ MQTT_BROKER=localhost <--MQTTブローカーが立っている場所
 # 6. co2miniのsystemdを作る
 以下を`/etc/systemd/system/co2mini.service` として保存する
 
-<iframe frameborder="0" scrolling="no" style="width:100%; height:416px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fjerr0328%2Fco2mini%2Fblob%2F4fa44ef4c1ec75d728496c38f0f3508f98f752ca%2Fco2mini.service%23L1C1-L16C27&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+```
+[Unit]
+Description=CO2 Monitoring via Prometheus
+After=multi-user.target
+ 
+[Service]
+User=pi
+Type=idle
+WorkingDirectory=/home/pi
+ExecStart=/home/pi/.local/bin/co2mini /dev/co2mini0
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/etc/co2mini.env
+ 
+[Install]
+WantedBy=multi-user.target
+```
 
 
 その後、`sudo systemctl daemon-reload && sudo systemctl enable co2mini && sudo systemctl start co2mini`
