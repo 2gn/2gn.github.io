@@ -2,7 +2,6 @@
 
 新品を買うとこれまた高いので、Google Pixel 3aにカスROMを焼くことにした。ちなみに、カスROMは[Evolution X](https://evolution-x.org/)を使っている。
 
-
 # Androidにしてから使っているアプリ
 
 ## Cromite
@@ -48,7 +47,6 @@ https://lawnchair.app/
 https://github.com/Catfriend1/syncthing-android
 
 Syncthing-androidのフォーク
-# その他
 
 ## Pano Scrobbler
 https://github.com/kawaiiDango/pano-scrobbler
@@ -63,3 +61,28 @@ https://github.com/breezy-weather/breezy-weather
 <img src="https://github.com/breezy-weather/breezy-weather/raw/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" style="width: 100px">
 
 オープンソースの天気アプリ
+
+## Read You
+
+https://github.com/ReadYouApp/ReadYou
+
+<image src="https://raw.githubusercontent.com/ReadYouApp/ReadYou/main/fastlane/metadata/android/en-US/images/icon.png" width="100px" />
+
+イケてるRSSリーダー
+
+## Heliboard
+
+https://github.com/Helium314/HeliBoard
+
+<image src="https://apt.izzysoft.de/fdroid/repo/helium314.keyboard/en-US/icon.png" width="100px" />
+
+Swipe to typeができる英字用キーボード。GBoardが~~サーバーに個人情報送りまくりで~~重いので。
+
+## Sumire
+
+https://github.com/KazumaProject/JapaneseKeyboard
+
+<image src="https://play-lh.googleusercontent.com/Y62bo90RmgXoRMI5MPR7ZLzEUAUPRVZI5PeQHhB8O2Ah6aMisk5TkrU2jvNfGvwUClk=s96" width="100px" />
+
+日本語キーボード。
+
