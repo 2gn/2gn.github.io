@@ -11,4 +11,3 @@
 # 関連項目
 * [日本国際フォーラム(JFIR)  - ワールドメイトの資料 （ワールドメイトの実態）](https://wmdata.main.jp/houjin-4/nihonkokusaiforum.html)
 *  [CSIS（戦略国際問題研究所）- きなこのブログ](https://kinaoworks.hatenablog.com/entry/2020/09/16/112317)
-* [JICA 理事長はロックフェラー系列の三極員会の前アジア議長 - tarobee8のブログ](https://tarobee8.hatenablog.com/entry/2025/08/27/133850)
