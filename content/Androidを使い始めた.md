@@ -4,34 +4,18 @@
 
 # Androidにしてから使っているアプリ
 
-## Cromite
-<image src="https://camo.githubusercontent.com/6b4ee03be91712db2d81b603a1bb83553e97b66fa49443bf27b641089ea51696/68747470733a2f2f7777772e63726f6d6974652e6f72672f6170705f69636f6e2e706e67" style="width: 100px"></image>
+## Droidify
 
-https://github.com/uazo/cromite
+<image src="https://droidify.eu.org/img/logo.svg" style="width: 100px"></image>
+https://droidify.eu.org/
 
-Bromite (Chromiumのフォーク) のフォーク。アドブロッカー等の機能を使うことができる。もともとIronfoxを使っていたが、あまりにも遅いのでChromiumに乗り換えた。
-
-
-
-## F-Droid
-
-<image src="https://duckduckgo.com/i/8b178e1d59b8b2a0.png" style="width: 100px"></image>
-https://f-droid.org/
-
-オープンソースのアプリストア。Play Storeの独占を許すな
+オープンソースのアプリストア。F-Droidよりも使い勝手が良い。
 ## Obtanium
 
 <image src="https://github.com/ImranR98/Obtainium/raw/main/assets/graphics/icon_small.png" style="width: 100px"></image>
 https://github.com/ImranR98/Obtainium
 
 GitHub等から直接アプリをインストール・アップデートするためのアプリ。CromiteはF-DroidにもPlay Storeにもないため、これで入れている。
-
-## Aurora Store
-
-https://github.com/whyorean/AuroraStore
-
-オープンソースのGoogle Play Store。F-Droidのアプリも入れることができる。
-
 ## Lawnchair
 
 <image src="https://lawnchair.app/images/lawnchair.webp" style="width: 100px"></image>
