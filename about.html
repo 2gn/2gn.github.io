@@ -192,42 +192,6 @@
       filter: sepia(80%);
     }
   </style>
-  <script>
-
-    async function get_lb_recordings() {
-      console.log("fetching data from listenbrainz...");
-      let response = await fetch("https://api.listenbrainz.org/1/stats/user/trees/recordings");
-      let _data = await response.json();
-      console.log(_data)
-      return _data.payload.recordings
-    }
-
-    async function get_playing_now() {
-      let response = await fetch("https://api.listenbrainz.org/1/user/trees/playing-now");
-      let _data = await response.json();
-      return _data.payload.listens[0].track_metadata
-    }
-
-    get_playing_now().then(song => {
-      let now_playing = document.getElementById("now-playing");
-      now_playing.innerText = song.track_name + " - " + song.artist_name;
-      now_playing.href = `https://listenbrainz.org/search/?search_term=${song.track_name.replace(" ", "+") + "+" + song.artist_name.replace(" ", "+")}&search_type=track`;
-    })
-
-    get_lb_recordings().then(recordings => {
-      let listen_list = document.getElementById("most-listened-songs");
-      for (let recording of recordings) {
-        let song_card = document.createElement("div");
-        let song_url = document.createElement("a")
-        song_url.innerText = recording.track_name + " - " + recording.artist_name;
-        song_url.href = "https://listenbrainz.org/track/" + recording.recording_mbid;
-        song_url.target = "#"
-        song_card.appendChild(song_url)
-        listen_list.appendChild(song_card);
-      }
-    })
-
-  </script>
 </body>
 
 </html>
