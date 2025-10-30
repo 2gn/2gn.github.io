@@ -24,52 +24,61 @@
     </div>
   </header>
 
-  <div id="profile">
-    <div>
-      <div id="icon">
-        <img src="https://avatars.githubusercontent.com/u/101851090?v=4">
-      </div>
-      <div id="bio">
-        <h1>2gn</h1>
-        <h3>
-          SOFTWARE DEVELOPER
-          <br>
-          HE/HIM
-        </h3>
-        <form onsubmit="(event) => {event.preventDefault()}"
-          oninput="x.value = 'Ah! ' + (parseInt(the_year_according_to_the_visitor.value) - 2005) + ' years old.'">
-          <div>
-            I'M...WHAT YEAR WAS IT?
-          </div>
-          <input id="the_year_according_to_the_visitor" placeholder="PLEASE ENTER THE YEAR">
-          <div>
-            <output name="x"></output>
-          </div>
-        </form>
-      </div>
-    </div>
+  <div id="banner">
+    ABOUT ME
   </div>
-
 
   <div id="main">
     <div>
       <div>
+        <h2>STUFF I LIKE</h2>
         <div>
-          <h2>
-            Works
-          </h2>
-          Something will be here...hopefully...
+          <ul>
+            <li>
+              Opensource software
+            </li>
+            <li>
+              Tinkering stuff
+            </li>
+            <li>
+              Linux
+            </li>
+            <li>
+              Selfhosting
+            </li>
+          </ul>
         </div>
       </div>
       <div>
-        Now playing...
-        <a id="now-playing" target="#">
-          nothing
-        </a>
+        <h2>FAVOURITE MOVIES/TV SERIES</h2>
         <div>
-          <h2>Most listened songs</h2>
-          <div id="most-listened-songs">
-          </div>
+          <ul>
+            <li>
+              Fight Club (1999)
+            </li>
+            <li>
+              Max Max 1,2 and Fury Road
+            </li>
+            <li>
+              Die Hard (1988)
+            </li>
+            <li>
+              Mr.Robot
+            </li>
+            <li>
+              Gravity (2020)
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h2>LINKS</h2>
+        <div>
+          <ul>
+            <li>
+              <a target="#" href="https://bookwyrm.social/user/scanner">bookwyrm</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -108,6 +117,11 @@
       font-family: FixedSys;
     }
 
+    #banner {
+      text-align: center;
+      font-size: 35px;
+      padding: 50px 0px 50px 0px;
+    }
 
     header {
       width: 100%;
@@ -151,20 +165,6 @@
       bottom: 0px;
     }
 
-    #profile {
-      display: flex;
-      justify-content: center;
-      margin: 40px 0px 40px 0px;
-
-      div {
-        width: 400px;
-
-        #bio {
-          text-align: center;
-        }
-      }
-    }
-
     #main {
       display: flex;
       justify-content: center;
@@ -190,21 +190,6 @@
 
     img {
       filter: sepia(80%);
-    }
-
-    #icon {
-      display: flex;
-      justify-content: center;
-
-      img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border-width: 1px;
-        border-color: var(--robco-green);
-        border-style: solid;
-        box-shadow: 0 0 2px var(--robco-green);
-      }
     }
   </style>
   <script>
