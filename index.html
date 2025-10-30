@@ -1,0 +1,248 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <ul>
+        <li>
+          <a href="/">home</a>
+        </li>
+        <li>
+          <a href="/blog">blog</a>
+        </li>
+        <li>
+          <a href="/">about</a>
+        </li>
+        <li>
+          <a href="/">news</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div id="profile">
+    <div>
+      <div id="icon">
+        <img src="https://avatars.githubusercontent.com/u/101851090?v=4">
+      </div>
+      <div id="bio">
+        <h1>2gn</h1>
+        <h3>
+          SOFTWARE DEVELOPER
+          <br>
+          HE/HIM
+        </h3>
+        <form onsubmit="(event) => {event.preventDefault()}"
+          oninput="x.value = 'Ah! ' + (parseInt(the_year_according_to_the_visitor.value) - 2005) + ' years old.'">
+          <div>
+            I'M...WHAT YEAR WAS IT?
+          </div>
+          <input id="the_year_according_to_the_visitor" placeholder="PLEASE ENTER THE YEAR">
+          <div>
+            <output name="x"></output>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="main">
+    <div>
+      <div>
+        <div>
+          <h2>
+            Works
+          </h2>
+          Something will be here...hopefully...
+        </div>
+      </div>
+      <div>
+        Now playing...
+        <a id="now-playing" target="#">
+          nothing
+        </a>
+        <div>
+          <h2>Most listened songs</h2>
+          <div id="most-listened-songs">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <hr>
+    This page is handcrafted using HTML, CSS and JS
+    <br>
+    Also, it's not copyrighted because fuck copyrights.
+  </footer>
+
+  <div id="overlay">
+
+  </div>
+
+  <style>
+    * {
+      text-shadow: 0 0 1.5px var(--robco-green);
+      border-color: var(--robco-green);
+    }
+
+    a {
+      color: var(--robco-green);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--robco-background);
+        background-color: var(--robco-green);
+      }
+    }
+
+    input {
+      background-color: var(--robco-background);
+      color: var(--robco-green);
+      font-family: FixedSys;
+    }
+
+
+    header {
+      width: 100%;
+
+      div {
+        ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          padding-left: 0px;
+
+
+          li {
+            text-transform: uppercase;
+            border-style: solid;
+            border-width: 1px;
+            margin: 0px 10px 0px 10px;
+            padding: 10px 0px 10px 0px;
+            display: block;
+
+            &>a {
+              padding: 10px 20px 10px 20px;
+            }
+
+
+            &:hover {
+              background-color: var(--robco-green);
+
+              &>a {
+                color: var(--robco-background);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      bottom: 0px;
+    }
+
+    #profile {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0px 40px 0px;
+
+      div {
+        width: 400px;
+
+        #bio {
+          text-align: center;
+        }
+      }
+    }
+
+    #main {
+      display: flex;
+      justify-content: center;
+
+      &>div {
+        width: 70%;
+
+        &>div {
+          margin: 20px 0px 20px 0px;
+
+          &>div {
+            box-shadow: 0 0 1.5px var(--robco-green);
+            padding: 10px;
+            width: 100%;
+            border-width: 1px;
+            border-color: var(--robco-green);
+            border-style: solid;
+          }
+        }
+      }
+
+    }
+
+    img {
+      filter: sepia(80%);
+    }
+
+    #icon {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border-width: 1px;
+        border-color: var(--robco-green);
+        border-style: solid;
+        box-shadow: 0 0 2px var(--robco-green);
+      }
+    }
+  </style>
+  <script>
+
+    async function get_lb_recordings() {
+      console.log("fetching data from listenbrainz...");
+      let response = await fetch("https://api.listenbrainz.org/1/stats/user/trees/recordings");
+      let _data = await response.json();
+      console.log(_data)
+      return _data.payload.recordings
+    }
+
+    async function get_playing_now() {
+      let response = await fetch("https://api.listenbrainz.org/1/user/trees/playing-now");
+      let _data = await response.json();
+      return _data.payload.listens[0].track_metadata
+    }
+
+    get_playing_now().then(song => {
+      let now_playing = document.getElementById("now-playing");
+      now_playing.innerText = song.track_name + " - " + song.artist_name;
+      now_playing.href = `https://listenbrainz.org/search/?search_term=${song.track_name.replace(" ", "+") + "+" + song.artist_name.replace(" ", "+")}&search_type=track`;
+    })
+
+    get_lb_recordings().then(recordings => {
+      let listen_list = document.getElementById("most-listened-songs");
+      for (let recording of recordings) {
+        let song_card = document.createElement("div");
+        let song_url = document.createElement("a")
+        song_url.innerText = recording.track_name + " - " + recording.artist_name;
+        song_url.href = "https://listenbrainz.org/track/" + recording.recording_mbid;
+        song_url.target = "#"
+        song_card.appendChild(song_url)
+        listen_list.appendChild(song_card);
+      }
+    })
+
+  </script>
+</body>
+
+</html>
