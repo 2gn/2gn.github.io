@@ -4,6 +4,7 @@
 
 @font-face {
   font-family: FixedSys;
+  font-display: swap;
   src: url(FSEX302.ttf);
 }
 
