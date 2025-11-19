@@ -33,3 +33,8 @@
   z-index: 2;
   pointer-events: none;
 }
+
+::selection {
+  background-color: var(--robco-green);
+  color: var(--robco-background);
+}
